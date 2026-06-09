@@ -1,6 +1,7 @@
 const cursor = document.querySelector(".cursor-glow");
 
 document.addEventListener("mousemove", e => {
+  if(!cursor) return;
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
 });
@@ -19,20 +20,20 @@ function resize(){
 window.addEventListener("resize", resize);
 resize();
 
-for(let i = 0; i < 55; i++){
+for(let i = 0; i < 75; i++){
   dots.push({
     x: Math.random() * w,
     y: Math.random() * h,
     r: Math.random() * 2 + 0.5,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35
+    vx: (Math.random() - 0.5) * 0.38,
+    vy: (Math.random() - 0.5) * 0.38
   });
 }
 
 function animate(){
-  ctx.clearRect(0, 0, w, h);
+  ctx.clearRect(0,0,w,h);
 
-  dots.forEach((p, i) => {
+  dots.forEach((p,i) => {
     p.x += p.vx;
     p.y += p.vy;
 
@@ -40,7 +41,7 @@ function animate(){
     if(p.y < 0 || p.y > h) p.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.arc(p.x,p.y,p.r,0,Math.PI * 2);
     ctx.fillStyle = "rgba(0,225,255,.55)";
     ctx.fill();
 
@@ -50,12 +51,12 @@ function animate(){
       const dy = p.y - q.y;
       const d = Math.sqrt(dx * dx + dy * dy);
 
-      if(d < 120){
+      if(d < 125){
         ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(0,225,255,${0.35 - d / 350})`;
-        ctx.lineWidth = 0.3;
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle = `rgba(0,225,255,${0.35 - d / 360})`;
+        ctx.lineWidth = .3;
         ctx.stroke();
       }
     }
@@ -65,18 +66,18 @@ function animate(){
 }
 
 animate();
+
 const sidebar = document.getElementById("chatSidebar");
 const btn = document.getElementById("collapseBtn");
 const icon = document.getElementById("collapseIcon");
 
 btn.addEventListener("click", () => {
+  sidebar.classList.toggle("closed");
+  document.body.classList.toggle("sidebar-closed");
 
-    sidebar.classList.toggle("closed");
-
-    if(sidebar.classList.contains("closed")){
-        icon.className = "fa-solid fa-angles-right";
-    } else {
-        icon.className = "fa-solid fa-panel-left";
-    }
-
+  if(sidebar.classList.contains("closed")){
+    icon.className = "fa-solid fa-angles-right";
+  }else{
+    icon.className = "fa-solid fa-bars";
+  }
 });

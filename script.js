@@ -71,21 +71,24 @@ function animate(){
 }
 
 animate();
-const music = document.getElementById("bgMusic");
+const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-music.volume = 0.45;
+bgMusic.volume = 0.6;
 
 musicBtn.addEventListener("click", async () => {
   try {
-    if (music.paused) {
-      await music.play();
+    if (bgMusic.paused) {
+      await bgMusic.play();
       musicBtn.classList.add("playing");
+      musicBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
     } else {
-      music.pause();
+      bgMusic.pause();
       musicBtn.classList.remove("playing");
+      musicBtn.innerHTML = `<i class="fa-solid fa-music"></i>`;
     }
-  } catch (err) {
-    alert("Tap again to allow music in Safari");
+  } catch (e) {
+    alert("Safari blocked audio. Check if freedom.mp3 exists in your project folder.");
+    console.log(e);
   }
 });

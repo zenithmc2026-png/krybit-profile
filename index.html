@@ -4,279 +4,245 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phantom Portfolio</title>
-
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
+<!-- SKILLS SECTION -->
+<section class="page-section skills-page" id="skills">
 
+    <div class="section-header">
+        <span class="section-tag">MY ABILITIES</span>
+
+        <h2>Skills</h2>
+
+        <p>
+            I create modern websites, Discord bots,
+            Minecraft servers and digital experiences.
+        </p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+
+            <h3>Frontend Development</h3>
+
+            <p>
+                Building responsive websites with
+                HTML, CSS and JavaScript.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:92%"></span>
+            </div>
+
+            <div class="skill-percent">92%</div>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-brands fa-node-js"></i>
+
+            <h3>Discord Bot Development</h3>
+
+            <p>
+                Discord.js bots, moderation systems,
+                tickets, embeds and automation.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:88%"></span>
+            </div>
+
+            <div class="skill-percent">88%</div>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-server"></i>
+
+            <h3>Minecraft Servers</h3>
+
+            <p>
+                Economy servers, Lifesteal setups,
+                plugins, permissions and networks.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:85%"></span>
+            </div>
+
+            <div class="skill-percent">85%</div>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-palette"></i>
+
+            <h3>UI / UX Design</h3>
+
+            <p>
+                Glassmorphism, neon themes,
+                modern layouts and animations.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:80%"></span>
+            </div>
+
+            <div class="skill-percent">80%</div>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-brands fa-github"></i>
+
+            <h3>GitHub</h3>
+
+            <p>
+                Version control, repositories,
+                deployment and collaboration.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:75%"></span>
+            </div>
+
+            <div class="skill-percent">75%</div>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+
+            <h3>Backend Basics</h3>
+
+            <p>
+                JSON databases, APIs,
+                Express.js and hosting.
+            </p>
+
+            <div class="skill-line">
+                <span style="width:70%"></span>
+            </div>
+
+            <div class="skill-percent">70%</div>
+        </div>
+
+    </div>
+
+</section>
 <body>
 
-  <canvas id="particles"></canvas>
-  <div class="cursor-glow"></div>
-  <div class="gif-bg"></div>
+<canvas id="particles"></canvas>
+<div class="cursor-glow"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-      <div class="logo">PN</div>
-      <h2>Phantom</h2>
-      <button id="toggleBtn" type="button">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">PN</div>
+    <h2>Phantom</h2>
+    <button id="toggleBtn"><i class="fa-solid fa-bars"></i></button>
+  </div>
+
+  <nav>
+    <a class="active" href="#"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
+    <a href="#develop"><i class="fa-solid fa-terminal"></i><span>Develop</span></a>
+    <a href="#shop"><i class="fa-solid fa-bag-shopping"></i><span>Shop</span></a>
+  </nav>
+
+  <p class="side-title">Socials</p>
+
+  <nav>
+    <a href="#"><i class="fa-brands fa-discord"></i><span>Discord</span></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+    <a href="#"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+  </nav>
+
+  <div class="profile-mini">
+    <div class="mini-logo">P</div>
+    <div>
+      <b>Phantom</b>
+      <p>Portfolio</p>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  <section class="hero-card">
+
+    <div class="avatar-wrap">
+      <div class="music-bars">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+        <span style="--i:8"></span>
+        <span style="--i:9"></span>
+        <span style="--i:10"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:13"></span>
+        <span style="--i:14"></span>
+        <span style="--i:15"></span>
+        <span style="--i:16"></span>
+        <span style="--i:17"></span>
+        <span style="--i:18"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+      </div>
+
+      <div class="music-note n1">♪</div>
+      <div class="music-note n2">♫</div>
+      <div class="music-note n3">♬</div>
+
+      <img src="avatar.jpg" class="avatar" alt="Avatar">
     </div>
 
-    <nav>
-      <a class="active" href="#home">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
-      </a>
+    <h1>PHANTOM</h1>
+    <h3>Developer • Creator • Student</h3>
 
-      <a href="#skills">
-        <i class="fa-solid fa-code"></i>
-        <span>Skills</span>
-      </a>
+    <div class="line"></div>
 
-      <a href="#develop">
-        <i class="fa-solid fa-terminal"></i>
-        <span>Develop</span>
-      </a>
+    <p class="bio">
+      I build modern websites, Discord bots, Minecraft servers and clean digital projects.
+    </p>
 
-      <a href="#shop">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span>Shop</span>
-      </a>
-    </nav>
-
-    <p class="side-title">Socials</p>
-
-    <nav>
-      <a href="#">
-        <i class="fa-brands fa-discord"></i>
-        <span>Discord</span>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-github"></i>
-        <span>GitHub</span>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-    </nav>
-
-    <div class="profile-mini">
-      <div class="mini-logo">P</div>
-      <div>
-        <b>Phantom</b>
-        <p>Portfolio</p>
-      </div>
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-discord"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
     </div>
-  </aside>
 
-  <main class="main">
+    <button class="connect-btn">
+      Let’s Connect <i class="fa-solid fa-paper-plane"></i>
+    </button>
 
-    <!-- HOME SECTION -->
-    <section class="hero-card" id="home">
+  </section>
 
-      <div class="avatar-wrap">
-        <div class="music-bars">
-          <span style="--i:1"></span>
-          <span style="--i:2"></span>
-          <span style="--i:3"></span>
-          <span style="--i:4"></span>
-          <span style="--i:5"></span>
-          <span style="--i:6"></span>
-          <span style="--i:7"></span>
-          <span style="--i:8"></span>
-          <span style="--i:9"></span>
-          <span style="--i:10"></span>
-          <span style="--i:11"></span>
-          <span style="--i:12"></span>
-          <span style="--i:13"></span>
-          <span style="--i:14"></span>
-          <span style="--i:15"></span>
-          <span style="--i:16"></span>
-          <span style="--i:17"></span>
-          <span style="--i:18"></span>
-          <span style="--i:19"></span>
-          <span style="--i:20"></span>
-        </div>
+  <section class="stats">
+    <div><h2>25+</h2><p>Projects</p></div>
+    <div><h2>15+</h2><p>Bots</p></div>
+    <div><h2>10+</h2><p>Servers</p></div>
+    <div><h2>3+</h2><p>Years</p></div>
+  </section>
 
-        <div class="music-note n1">♪</div>
-        <div class="music-note n2">♫</div>
-        <div class="music-note n3">♬</div>
+  <section class="cards" id="skills">
+    <div class="card"><i class="fa-brands fa-html5"></i><h3>Frontend</h3><p>HTML, CSS, JavaScript</p></div>
+    <div class="card"><i class="fa-brands fa-node-js"></i><h3>Discord Bots</h3><p>Node.js, Discord.js</p></div>
+    <div class="card"><i class="fa-solid fa-server"></i><h3>Minecraft</h3><p>Servers, plugins, setup</p></div>
+  </section>
+</main>
 
-        <img src="avatar.jpg" class="avatar" alt="Avatar">
-      </div>
+<script src="script.js"></script>
+<audio id="bgMusic" preload="auto" loop playsinline>
+  <source src="./freedom.mp3" type="audio/mpeg">
+</audio>
 
-      <h1>PHANTOM</h1>
-      <h3>Developer • Creator • Student</h3>
-
-      <div class="line"></div>
-
-      <p class="bio">
-        I build modern websites, Discord bots, Minecraft servers and clean digital projects.
-      </p>
-
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-discord"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      </div>
-
-      <button class="connect-btn" type="button">
-        Let’s Connect <i class="fa-solid fa-paper-plane"></i>
-      </button>
-
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section class="page-section skills-page" id="skills">
-
-      <div class="section-header">
-        <span class="section-tag">MY ABILITIES</span>
-        <h2>Skills</h2>
-        <p>
-          I create modern websites, Discord bots, Minecraft servers and digital experiences.
-        </p>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <i class="fa-brands fa-html5"></i>
-          <h3>Frontend Development</h3>
-          <p>Building responsive websites with HTML, CSS and JavaScript.</p>
-
-          <div class="skill-line">
-            <span style="width:92%"></span>
-          </div>
-
-          <div class="skill-percent">92%</div>
-        </div>
-
-        <div class="skill-card">
-          <i class="fa-brands fa-node-js"></i>
-          <h3>Discord Bot Development</h3>
-          <p>Discord.js bots, moderation systems, tickets, embeds and automation.</p>
-
-          <div class="skill-line">
-            <span style="width:88%"></span>
-          </div>
-
-          <div class="skill-percent">88%</div>
-        </div>
-
-        <div class="skill-card">
-          <i class="fa-solid fa-server"></i>
-          <h3>Minecraft Servers</h3>
-          <p>Economy servers, Lifesteal setups, plugins, permissions and networks.</p>
-
-          <div class="skill-line">
-            <span style="width:85%"></span>
-          </div>
-
-          <div class="skill-percent">85%</div>
-        </div>
-
-        <div class="skill-card">
-          <i class="fa-solid fa-palette"></i>
-          <h3>UI / UX Design</h3>
-          <p>Glassmorphism, neon themes, modern layouts and animations.</p>
-
-          <div class="skill-line">
-            <span style="width:80%"></span>
-          </div>
-
-          <div class="skill-percent">80%</div>
-        </div>
-
-        <div class="skill-card">
-          <i class="fa-brands fa-github"></i>
-          <h3>GitHub</h3>
-          <p>Version control, repositories, deployment and collaboration.</p>
-
-          <div class="skill-line">
-            <span style="width:75%"></span>
-          </div>
-
-          <div class="skill-percent">75%</div>
-        </div>
-
-        <div class="skill-card">
-          <i class="fa-solid fa-database"></i>
-          <h3>Backend Basics</h3>
-          <p>JSON databases, APIs, Express.js and hosting.</p>
-
-          <div class="skill-line">
-            <span style="width:70%"></span>
-          </div>
-
-          <div class="skill-percent">70%</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- STATS SECTION -->
-    <section class="stats">
-      <div>
-        <h2>25+</h2>
-        <p>Projects</p>
-      </div>
-
-      <div>
-        <h2>15+</h2>
-        <p>Bots</p>
-      </div>
-
-      <div>
-        <h2>10+</h2>
-        <p>Servers</p>
-      </div>
-
-      <div>
-        <h2>3+</h2>
-        <p>Years</p>
-      </div>
-    </section>
-
-    <!-- DEVELOP SECTION -->
-    <section class="page-section" id="develop">
-      <div class="section-header">
-        <span class="section-tag">MY WORK</span>
-        <h2>Develop</h2>
-        <p>Projects, bots, websites and Minecraft server setups.</p>
-      </div>
-    </section>
-
-    <!-- SHOP SECTION -->
-    <section class="page-section" id="shop">
-      <div class="section-header">
-        <span class="section-tag">MY STORE</span>
-        <h2>Shop</h2>
-        <p>Digital products, themes and custom development services.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <audio id="bgMusic" preload="auto" loop playsinline>
-    <source src="./freedom.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicBtn" class="music-toggle" type="button">
-    <i class="fa-solid fa-music"></i>
-  </button>
-
-  <script src="script.js"></script>
+<button id="musicBtn" class="music-toggle" type="button">
+  <i class="fa-solid fa-music"></i>
+</button>
 
 </body>
 </html>

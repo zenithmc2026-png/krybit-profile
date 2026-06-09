@@ -71,3 +71,21 @@ function animate(){
 }
 
 animate();
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.45;
+
+musicBtn.addEventListener("click", async () => {
+  try {
+    if (music.paused) {
+      await music.play();
+      musicBtn.classList.add("playing");
+    } else {
+      music.pause();
+      musicBtn.classList.remove("playing");
+    }
+  } catch (err) {
+    alert("Tap again to allow music in Safari");
+  }
+});

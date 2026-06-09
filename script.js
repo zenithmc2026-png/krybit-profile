@@ -1,110 +1,80 @@
-const cursor = document.querySelector('.cursor-glow');
-const navLinks = document.querySelectorAll('.nav-link');
-const audio = document.getElementById('audio');
-const playBtn = document.getElementById('playBtn');
-const progress = document.querySelector('.progress');
-const musicStatus = document.querySelector('.music-status');
+const cursor = document.querySelector(".cursor-glow");
 
-window.addEventListener('mousemove', (event) => {
-  cursor.style.left = `${event.clientX}px`;
-  cursor.style.top = `${event.clientY}px`;
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.forEach((item) => item.classList.remove('active'));
-    link.classList.add('active');
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+let dots = [];
+
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+for(let i = 0; i < 70; i++){
+  dots.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 2 + 0.5,
+    vx: (Math.random() - 0.5) * 0.45,
+    vy: (Math.random() - 0.5) * 0.45
   });
-});
-
-playBtn.addEventListener('click', async () => {
-  try {
-    if (audio.paused) {
-      await audio.play();
-      playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-      progress.classList.add('playing');
-      musicStatus.textContent = 'playing';
-    } else {
-      audio.pause();
-      playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-      progress.classList.remove('playing');
-      musicStatus.textContent = 'paused';
-    }
-  } catch (error) {
-    musicStatus.textContent = 'tap again';
-  }
-});
-
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-let width;
-let height;
-let particles = [];
-
-function resizeCanvas() {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
 }
 
-function createParticles() {
-  particles = [];
-  const total = window.innerWidth < 850 ? 75 : 145;
+function animate(){
+  ctx.clearRect(0, 0, w, h);
 
-  for (let i = 0; i < total; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 2.2 + 0.6,
-      vx: (Math.random() - 0.5) * 0.65,
-      vy: (Math.random() - 0.5) * 0.65,
-      alpha: Math.random() * 0.65 + 0.25
-    });
-  }
-}
+  dots.forEach((p, i) => {
+    p.x += p.vx;
+    p.y += p.vy;
 
-function drawParticles() {
-  ctx.clearRect(0, 0, width, height);
-
-  particles.forEach((particle, index) => {
-    particle.x += particle.vx;
-    particle.y += particle.vy;
-
-    if (particle.x < 0 || particle.x > width) particle.vx *= -1;
-    if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+    if(p.x < 0 || p.x > w) p.vx *= -1;
+    if(p.y < 0 || p.y > h) p.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0,234,255,${particle.alpha})`;
-    ctx.shadowBlur = 12;
-    ctx.shadowColor = '#00eaff';
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0,225,255,.65)";
     ctx.fill();
-    ctx.shadowBlur = 0;
 
-    for (let j = index + 1; j < particles.length; j++) {
-      const other = particles[j];
-      const dx = particle.x - other.x;
-      const dy = particle.y - other.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+    for(let j = i + 1; j < dots.length; j++){
+      const q = dots[j];
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      const d = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < 115) {
+      if(d < 130){
         ctx.beginPath();
-        ctx.moveTo(particle.x, particle.y);
-        ctx.lineTo(other.x, other.y);
-        ctx.strokeStyle = `rgba(0,234,255,${(1 - distance / 115) * 0.34})`;
-        ctx.lineWidth = 0.7;
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = `rgba(0,225,255,${0.45 - d / 300})`;
+        ctx.lineWidth = 0.35;
         ctx.stroke();
       }
     }
   });
 
-  requestAnimationFrame(drawParticles);
+  requestAnimationFrame(animate);
 }
 
-window.addEventListener('resize', () => {
-  resizeCanvas();
-  createParticles();
-});
+animate();
 
-resizeCanvas();
-createParticles();
-drawParticles();
+const audio = document.getElementById("audio");
+const btn = document.getElementById("playBtn");
+
+btn.addEventListener("click", () => {
+  if(audio.paused){
+    audio.play();
+    btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+  }else{
+    audio.pause();
+    btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+  }
+});

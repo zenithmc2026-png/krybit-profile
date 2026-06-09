@@ -1,65 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bishweshwar Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bishweshwar Nayak</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-<canvas id="stars"></canvas>
-<div class="aurora"></div>
-<div class="cursor"></div>
+<canvas id="bg"></canvas>
+<div class="smoke"></div>
+<div class="cursor-glow"></div>
 
-<audio id="bgMusic" loop>
-  <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
-</audio>
+<aside class="sidebar">
+  <h2>BN</h2>
 
-<div class="portfolio">
+  <nav>
+    <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+    <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+    <a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a>
+    <a href="#music"><i class="fa-solid fa-music"></i> Music</a>
+  </nav>
 
-  <section class="left">
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?v=4">
-    <h1>Bishweshwar Nayak</h1>
-    <p class="role">Developer • Creator • Student</p>
+  <div class="socials">
+    <a href="https://discord.gg/QRaVYpKZv" target="_blank"><i class="fab fa-discord"></i></a>
+    <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+</aside>
 
-    <div class="buttons">
-      <a href="#"><i class="fab fa-discord"></i> Discord</a>
-      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-    </div>
-  </section>
+<main class="page">
 
-  <section class="right">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>
-        Hi, I am Bishweshwar. I create websites, Discord bots, Minecraft servers,
-        and clean digital projects with premium design.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Node.js</span>
-        <span>Discord Bots</span>
-        <span>Minecraft Servers</span>
+  <section class="hero" id="home">
+    <div class="profile">
+      <div class="avatar-wrap">
+        <img src="avatar.jpg" class="avatar" alt="Profile Picture">
       </div>
+
+      <h1>Bishweshwar</h1>
+      <h3>Nayak</h3>
+      <p>Developer • Creator • Student</p>
+
+      <div class="line"></div>
+
+      <p class="intro">
+        I build modern websites, Discord bots, Minecraft servers and clean digital projects with smooth design.
+      </p>
+
+      <a class="connect" href="https://discord.gg/QRaVYpKZv" target="_blank">
+        Let’s Connect <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
 
-    <div class="card music">
-      <h2>Music</h2>
-      <button id="musicBtn">▶ Play Background Music</button>
+    <div class="content">
+
+      <div class="card" id="about">
+        <h2><i class="fa-solid fa-user"></i> About Me</h2>
+        <p>
+          Hi, I’m Bishweshwar. I enjoy turning ideas into real projects.
+          I focus on clean design, performance, animations and aesthetic UI.
+        </p>
+        <span class="signature">Bishweshwar</span>
+      </div>
+
+      <div class="card" id="skills">
+        <h2><i class="fa-solid fa-code"></i> Skills</h2>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>Discord.js</span>
+          <span>Python</span>
+          <span>GitHub</span>
+          <span>Minecraft Servers</span>
+        </div>
+      </div>
+
+      <div class="card" id="projects">
+        <div class="title-row">
+          <h2><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
+          <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="projects">
+          <div class="project">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio with HTML, CSS, JS and animations.</p>
+            <button>View Project</button>
+          </div>
+
+          <div class="project">
+            <i class="fab fa-discord"></i>
+            <h3>Discord Bot</h3>
+            <p>Advanced Discord bot with moderation and utilities.</p>
+            <button>View Project</button>
+          </div>
+
+          <div class="project">
+            <i class="fa-solid fa-cube"></i>
+            <h3>Minecraft Server</h3>
+            <p>Custom Minecraft server with unique plugins.</p>
+            <button>View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card music-card" id="music">
+        <h2><i class="fa-solid fa-music"></i> Now Playing</h2>
+
+        <div class="player">
+          <div class="cover">♪</div>
+
+          <div class="song-info">
+            <h3>Freedom</h3>
+            <p>Pharrell Williams</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </div>
+
+          <button id="playBtn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
+
+        <audio id="musicAudio" loop>
+          <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
     </div>
   </section>
 
-</div>
+</main>
 
 <script src="script.js"></script>
 </body>

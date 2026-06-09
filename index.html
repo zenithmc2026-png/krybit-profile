@@ -3,156 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bishweshwar Nayak</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Phantom Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="bg"></div>
-<div class="overlay"></div>
-<canvas id="particles"></canvas>
-<div class="cursor-glow"></div>
+  <div class="background"></div>
+  <div class="shade"></div>
+  <div class="scanlines"></div>
+  <canvas id="particles"></canvas>
+  <div class="cursor-glow"></div>
 
-<aside class="sidebar">
-  <h1>BN</h1>
+  <aside class="sidebar">
+    <div class="logo">PN</div>
 
-  <nav>
-    <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="#about"><i class="fa-solid fa-user"></i> About</a>
-    <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
-    <a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a>
-    <a href="#music"><i class="fa-solid fa-music"></i> Music</a>
-    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-  </nav>
+    <nav>
+      <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i><span>Skills</span></a>
+      <a href="#projects" class="nav-link"><i class="fa-solid fa-folder-open"></i><span>Projects</span></a>
+      <a href="#music" class="nav-link"><i class="fa-solid fa-music"></i><span>Music</span></a>
+    </nav>
 
-  <div class="socials">
-    <a href="https://discord.gg/QRaVYpKZv" target="_blank"><i class="fab fa-discord"></i></a>
-    <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-  </div>
-</aside>
-
-<main class="main" id="home">
-
-  <section class="profile-card glass">
-    <div class="corner-dot one"></div>
-    <div class="corner-dot two"></div>
-
-    <div class="avatar-ring">
-      <img src="avatar.jpg" class="avatar" alt="Profile Picture">
+    <div class="socials">
+      <a href="https://discord.gg/QRaVYpKZv" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
     </div>
+  </aside>
 
-    <h1>BISHWESHWAR</h1>
-    <h2>NAYAK</h2>
-    <p>Developer • Creator • Student</p>
+  <main class="layout" id="home">
 
-    <div class="line"></div>
+    <section class="hero-card glass floating-card">
+      <div class="corner-dot top"></div>
+      <div class="corner-dot bottom"></div>
 
-    <p class="intro">
-      I build modern websites, Discord bots, Minecraft servers and digital solutions with clean design and smooth experience.
-    </p>
+      <div class="avatar-wrap">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <img src="avatar.jpg" alt="Phantom avatar" class="avatar" />
+      </div>
 
-    <a class="btn" href="https://discord.gg/QRaVYpKZv" target="_blank">
-      Let’s Connect <i class="fa-solid fa-paper-plane"></i>
-    </a>
+      <p class="overline">personal portfolio</p>
+      <h1 class="name">PHANTOM</h1>
+      <p class="role">Developer • Creator • Student</p>
 
-    <div class="status">
-      <span></span> Available for work
-    </div>
-  </section>
+      <div class="divider"><span></span></div>
 
-  <section class="content">
-
-    <div class="card glass" id="about">
-      <span class="card-dot"></span>
-      <h3><i class="fa-solid fa-user"></i> About Me</h3>
-      <p>
-        Hi, I’m Bishweshwar. I enjoy turning ideas into real projects.
-        I focus on clean design, performance, animations and aesthetic UI.
+      <p class="intro">
+        I build modern websites, Discord bots, Minecraft servers and clean digital projects with smooth design.
       </p>
-      <div class="signature">Bishweshwar</div>
-    </div>
 
-    <div class="card glass" id="skills">
-      <span class="card-dot"></span>
-      <h3><i class="fa-solid fa-code"></i> Skills</h3>
-      <div class="tags">
-        <span><i class="fa-brands fa-html5"></i> HTML</span>
-        <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
-        <span><i class="fa-brands fa-js"></i> JavaScript</span>
-        <span><i class="fa-brands fa-node-js"></i> Node.js</span>
-        <span><i class="fab fa-discord"></i> Discord.js</span>
-        <span><i class="fa-brands fa-python"></i> Python</span>
-        <span><i class="fa-brands fa-github"></i> GitHub</span>
-        <span><i class="fa-solid fa-cube"></i> Minecraft Servers</span>
+      <div class="hero-actions">
+        <a href="https://discord.gg/QRaVYpKZv" target="_blank" class="primary-btn">
+          Let's Connect <i class="fa-solid fa-paper-plane"></i>
+        </a>
+        <span class="work-pill"><i></i> Available for work</span>
       </div>
-    </div>
+    </section>
 
-    <div class="card glass" id="projects">
-      <span class="card-dot"></span>
-      <div class="card-head">
-        <h3><i class="fa-solid fa-folder-open"></i> Featured Projects</h3>
-        <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
+    <section class="right-area">
+
+      <div class="mini-grid">
+        <article class="glass info-card wide reveal">
+          <span class="cyan-dot"></span>
+          <h2><i class="fa-solid fa-user-astronaut"></i> About Phantom</h2>
+          <p>
+            I enjoy turning ideas into real projects. I focus on clean design, smooth animation,
+            good performance and premium-looking UI.
+          </p>
+        </article>
+
+        <article class="glass info-card reveal delay-1">
+          <span class="cyan-dot"></span>
+          <h2><i class="fa-solid fa-bolt"></i> Focus</h2>
+          <p>Websites, Discord bots, server systems, clean UI, and creative digital builds.</p>
+        </article>
       </div>
 
-      <div class="projects">
-        <div class="project">
-          <i class="fa-solid fa-globe"></i>
-          <h4>Portfolio Website</h4>
-          <p>Personal portfolio with HTML, CSS, JS and beautiful animations.</p>
-          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
+      <article class="glass panel reveal delay-2" id="skills">
+        <div class="panel-head">
+          <h2><i class="fa-solid fa-code"></i> Skills</h2>
+          <span>stack</span>
         </div>
 
-        <div class="project">
-          <i class="fab fa-discord"></i>
-          <h4>Discord Bot</h4>
-          <p>Advanced Discord bot with moderation, music and utility features.</p>
-          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
+        <div class="skills">
+          <span><i class="fa-brands fa-html5"></i> HTML</span>
+          <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+          <span><i class="fa-brands fa-discord"></i> Discord.js</span>
+          <span><i class="fa-brands fa-python"></i> Python</span>
+          <span><i class="fa-brands fa-github"></i> GitHub</span>
+          <span><i class="fa-solid fa-cube"></i> Minecraft Servers</span>
+        </div>
+      </article>
+
+      <article class="glass panel reveal delay-3" id="projects">
+        <div class="panel-head">
+          <h2><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
+          <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank">View GitHub <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
-        <div class="project">
-          <i class="fa-solid fa-cube"></i>
-          <h4>Minecraft Server</h4>
-          <p>Custom Minecraft server with unique plugins and smooth performance.</p>
-          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="card music glass" id="music">
-      <span class="card-dot"></span>
-      <h3><i class="fa-solid fa-music"></i> Now Playing</h3>
-
-      <div class="player">
-        <div class="cover">
-          <span>♪</span>
-        </div>
-
-        <div class="song-box">
-          <h4>Freedom</h4>
-          <p>Pharrell Williams</p>
-          <div class="bars">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <div class="projects">
+          <div class="project-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Portfolio Website</h3>
+            <p>Animated personal portfolio using HTML, CSS and JavaScript.</p>
+            <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
           </div>
-          <div class="bar"><span></span></div>
+
+          <div class="project-card">
+            <i class="fa-brands fa-discord"></i>
+            <h3>Discord Bot</h3>
+            <p>Custom bot with moderation, utilities, tickets and server tools.</p>
+            <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div class="project-card">
+            <i class="fa-solid fa-cube"></i>
+            <h3>Minecraft Server</h3>
+            <p>Server setup with plugins, economy, ranks and custom menus.</p>
+            <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass music-panel reveal delay-4" id="music">
+        <div class="panel-head">
+          <h2><i class="fa-solid fa-music"></i> Now Playing</h2>
+          <span class="music-status">click play</span>
         </div>
 
-        <button id="playBtn">
-          <i class="fa-solid fa-play"></i>
-        </button>
-      </div>
+        <div class="player">
+          <div class="album-art">
+            <i class="fa-solid fa-music"></i>
+          </div>
 
-      <audio id="audio" loop>
-        <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
-      </audio>
-    </div>
+          <div class="song">
+            <h3>Freedom</h3>
+            <p>Pharrell Williams</p>
+            <div class="visualizer" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="progress"><span></span></div>
+          </div>
 
-  </section>
+          <button id="playBtn" class="play-btn" aria-label="Play music">
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
 
-</main>
+        <audio id="audio" loop>
+          <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg" />
+        </audio>
+      </article>
 
-<script src="script.js"></script>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

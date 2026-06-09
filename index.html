@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Phantom</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phantom Portfolio</title>
 
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="sidebar.css" />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
 
-<div class="bg"></div>
-<div class="shade"></div>
-<canvas id="particles"></canvas>
-<div class="cursor-glow"></div>
+  <canvas id="particles"></canvas>
+  <div class="cursor-glow"></div>
+  <div class="bg-fog"></div>
 
-<aside class="chat-sidebar" id="chatSidebar">
-  <div class="sidebar-top">
+  <aside class="sidebar" id="sidebar">
     <div class="brand">
       <div class="logo">PN</div>
-      <span class="brand-text">Phantom</span>
+      <h2>Phantom</h2>
+      <button id="toggleBtn"><i class="fa-solid fa-bars"></i></button>
     </div>
 
-    <button class="collapse-btn" id="collapseBtn">
-      <i class="fa-solid fa-bars" id="collapseIcon"></i>
-    </button>
-  </div>
+    <nav>
+      <a class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
+      <a href="#projects"><i class="fa-solid fa-terminal"></i><span>Develop</span></a>
+      <a href="#shop"><i class="fa-solid fa-bag-shopping"></i><span>Shop</span></a>
+    </nav>
 
-  <nav class="sidebar-links">
-    <a class="active" href="#"><i class="fa-solid fa-house"></i><span>Home</span></a>
-    <a href="#"><i class="fa-solid fa-code"></i><span>Skills</span></a>
-    <a href="#"><i class="fa-solid fa-terminal"></i><span>Develop</span></a>
-    <a href="#"><i class="fa-solid fa-bag-shopping"></i><span>Shop</span></a>
-  </nav>
+    <p class="side-title">Socials</p>
 
-  <div class="sidebar-section">
-    <h4>Socials</h4>
-    <a href="https://discord.gg/QRaVYpKZv" target="_blank"><i class="fab fa-discord"></i><span>Discord</span></a>
-    <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-    <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank"><i class="fab fa-github"></i><span>GitHub</span></a>
-    <a href="#"><i class="fab fa-youtube"></i><span>YouTube</span></a>
-  </div>
+    <nav>
+      <a href="#"><i class="fa-brands fa-discord"></i><span>Discord</span></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+      <a href="#"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+    </nav>
 
-  <div class="sidebar-footer">
-    <div class="mini-avatar">P</div>
-    <div>
-      <strong>Phantom</strong>
-      <p>Portfolio</p>
+    <div class="profile-mini">
+      <div class="mini-logo">P</div>
+      <div>
+        <b>Phantom</b>
+        <p>Portfolio</p>
+      </div>
     </div>
-  </div>
-</aside>
+  </aside>
 
-<main class="center">
-  <section class="phantom-card">
+  <main class="main">
+    <section class="hero-card">
+      <div class="avatar-wrap">
+        <img src="avatar.jpg" class="avatar">
+      </div>
 
-    <div class="avatar-ring">
-      <img src="avatar.jpg" class="avatar" alt="Phantom">
-    </div>
+      <h1>PHANTOM</h1>
+      <h3>Developer • Creator • Student</h3>
+      <div class="line"></div>
 
-    <h1>PHANTOM</h1>
+      <p class="bio">
+        I build modern websites, Discord bots, Minecraft servers and clean digital projects.
+      </p>
 
-    <p>Developer • Creator • Student</p>
+      <div class="social-icons">
+        <a><i class="fa-brands fa-discord"></i></a>
+        <a><i class="fa-brands fa-instagram"></i></a>
+        <a><i class="fa-brands fa-github"></i></a>
+        <a><i class="fa-brands fa-youtube"></i></a>
+      </div>
 
-    <div class="line"></div>
+      <button class="connect-btn">
+        Let’s Connect <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </section>
 
-    <p class="bio">
-      I build modern websites, Discord bots, Minecraft servers and clean digital projects.
-    </p>
+    <section class="stats">
+      <div><h2>25+</h2><p>Projects</p></div>
+      <div><h2>15+</h2><p>Bots</p></div>
+      <div><h2>10+</h2><p>Servers</p></div>
+      <div><h2>3+</h2><p>Years</p></div>
+    </section>
 
-    <div class="links">
-      <a href="https://discord.gg/QRaVYpKZv" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
+    <section class="cards" id="skills">
+      <div class="card"><i class="fa-brands fa-html5"></i><h3>Frontend</h3><p>HTML, CSS, JavaScript</p></div>
+      <div class="card"><i class="fa-brands fa-node-js"></i><h3>Discord Bots</h3><p>Node.js, Discord.js</p></div>
+      <div class="card"><i class="fa-solid fa-server"></i><h3>Minecraft</h3><p>Servers, plugins, setups</p></div>
+    </section>
+  </main>
 
-    <a class="connect" href="https://discord.gg/QRaVYpKZv" target="_blank">
-      Let’s Connect <i class="fa-solid fa-paper-plane"></i>
-    </a>
-
-  </section>
-</main>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

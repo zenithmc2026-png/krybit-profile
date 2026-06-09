@@ -1,9 +1,15 @@
 const cursor = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", e => {
-  if(!cursor) return;
+document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+});
+
+const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("toggleBtn");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("closed");
 });
 
 const canvas = document.getElementById("particles");
@@ -12,7 +18,7 @@ const ctx = canvas.getContext("2d");
 let w, h;
 let dots = [];
 
-function resize(){
+function resize() {
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
 }
@@ -20,43 +26,42 @@ function resize(){
 window.addEventListener("resize", resize);
 resize();
 
-for(let i = 0; i < 75; i++){
+for (let i = 0; i < 85; i++) {
   dots.push({
     x: Math.random() * w,
     y: Math.random() * h,
-    r: Math.random() * 2 + 0.5,
-    vx: (Math.random() - 0.5) * 0.38,
-    vy: (Math.random() - 0.5) * 0.38
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5,
+    size: Math.random() * 3 + 1
   });
 }
 
-function animate(){
-  ctx.clearRect(0,0,w,h);
+function animate() {
+  ctx.clearRect(0, 0, w, h);
 
-  dots.forEach((p,i) => {
-    p.x += p.vx;
-    p.y += p.vy;
+  dots.forEach((dot, i) => {
+    dot.x += dot.vx;
+    dot.y += dot.vy;
 
-    if(p.x < 0 || p.x > w) p.vx *= -1;
-    if(p.y < 0 || p.y > h) p.vy *= -1;
+    if (dot.x < 0 || dot.x > w) dot.vx *= -1;
+    if (dot.y < 0 || dot.y > h) dot.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI * 2);
-    ctx.fillStyle = "rgba(0,225,255,.55)";
+    ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0, 238, 255, 0.75)";
     ctx.fill();
 
-    for(let j = i + 1; j < dots.length; j++){
-      const q = dots[j];
-      const dx = p.x - q.x;
-      const dy = p.y - q.y;
-      const d = Math.sqrt(dx * dx + dy * dy);
+    for (let j = i + 1; j < dots.length; j++) {
+      const dx = dot.x - dots[j].x;
+      const dy = dot.y - dots[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if(d < 125){
+      if (dist < 120) {
         ctx.beginPath();
-        ctx.moveTo(p.x,p.y);
-        ctx.lineTo(q.x,q.y);
-        ctx.strokeStyle = `rgba(0,225,255,${0.35 - d / 360})`;
-        ctx.lineWidth = .3;
+        ctx.moveTo(dot.x, dot.y);
+        ctx.lineTo(dots[j].x, dots[j].y);
+        ctx.strokeStyle = `rgba(0, 238, 255, ${1 - dist / 120})`;
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       }
     }
@@ -66,18 +71,3 @@ function animate(){
 }
 
 animate();
-
-const sidebar = document.getElementById("chatSidebar");
-const btn = document.getElementById("collapseBtn");
-const icon = document.getElementById("collapseIcon");
-
-btn.addEventListener("click", () => {
-  sidebar.classList.toggle("closed");
-  document.body.classList.toggle("sidebar-closed");
-
-  if(sidebar.classList.contains("closed")){
-    icon.className = "fa-solid fa-angles-right";
-  }else{
-    icon.className = "fa-solid fa-bars";
-  }
-});

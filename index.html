@@ -23,6 +23,7 @@
     <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
     <a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a>
     <a href="#music"><i class="fa-solid fa-music"></i> Music</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
 
   <div class="socials">
@@ -35,9 +36,12 @@
 
 <main class="main" id="home">
 
-  <section class="profile-card">
+  <section class="profile-card glass">
+    <div class="corner-dot one"></div>
+    <div class="corner-dot two"></div>
+
     <div class="avatar-ring">
-      <img src="avatar.jpg" class="avatar">
+      <img src="avatar.jpg" class="avatar" alt="Profile Picture">
     </div>
 
     <h1>BISHWESHWAR</h1>
@@ -47,7 +51,7 @@
     <div class="line"></div>
 
     <p class="intro">
-      I build modern websites, Discord bots, Minecraft servers and digital projects with smooth design.
+      I build modern websites, Discord bots, Minecraft servers and digital solutions with clean design and smooth experience.
     </p>
 
     <a class="btn" href="https://discord.gg/QRaVYpKZv" target="_blank">
@@ -61,63 +65,77 @@
 
   <section class="content">
 
-    <div class="card" id="about">
+    <div class="card glass" id="about">
+      <span class="card-dot"></span>
       <h3><i class="fa-solid fa-user"></i> About Me</h3>
       <p>
         Hi, I’m Bishweshwar. I enjoy turning ideas into real projects.
         I focus on clean design, performance, animations and aesthetic UI.
       </p>
+      <div class="signature">Bishweshwar</div>
     </div>
 
-    <div class="card" id="skills">
+    <div class="card glass" id="skills">
+      <span class="card-dot"></span>
       <h3><i class="fa-solid fa-code"></i> Skills</h3>
       <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Node.js</span>
-        <span>Discord.js</span>
-        <span>Python</span>
-        <span>GitHub</span>
-        <span>Minecraft Servers</span>
+        <span><i class="fa-brands fa-html5"></i> HTML</span>
+        <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+        <span><i class="fa-brands fa-js"></i> JavaScript</span>
+        <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+        <span><i class="fab fa-discord"></i> Discord.js</span>
+        <span><i class="fa-brands fa-python"></i> Python</span>
+        <span><i class="fa-brands fa-github"></i> GitHub</span>
+        <span><i class="fa-solid fa-cube"></i> Minecraft Servers</span>
       </div>
     </div>
 
-    <div class="card" id="projects">
-      <h3><i class="fa-solid fa-folder-open"></i> Featured Projects</h3>
+    <div class="card glass" id="projects">
+      <span class="card-dot"></span>
+      <div class="card-head">
+        <h3><i class="fa-solid fa-folder-open"></i> Featured Projects</h3>
+        <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
 
       <div class="projects">
         <div class="project">
           <i class="fa-solid fa-globe"></i>
           <h4>Portfolio Website</h4>
-          <p>Personal portfolio with animations and glass UI.</p>
-          <button>View Project</button>
+          <p>Personal portfolio with HTML, CSS, JS and beautiful animations.</p>
+          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="project">
           <i class="fab fa-discord"></i>
           <h4>Discord Bot</h4>
-          <p>Advanced bot with moderation and utilities.</p>
-          <button>View Project</button>
+          <p>Advanced Discord bot with moderation, music and utility features.</p>
+          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="project">
           <i class="fa-solid fa-cube"></i>
           <h4>Minecraft Server</h4>
-          <p>Custom server with plugins and economy.</p>
-          <button>View Project</button>
+          <p>Custom Minecraft server with unique plugins and smooth performance.</p>
+          <button>View Project <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
 
-    <div class="card music" id="music">
+    <div class="card music glass" id="music">
+      <span class="card-dot"></span>
       <h3><i class="fa-solid fa-music"></i> Now Playing</h3>
 
       <div class="player">
-        <div class="cover">♪</div>
-        <div>
+        <div class="cover">
+          <span>♪</span>
+        </div>
+
+        <div class="song-box">
           <h4>Freedom</h4>
           <p>Pharrell Williams</p>
+          <div class="bars">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
           <div class="bar"><span></span></div>
         </div>
 

@@ -10,6 +10,7 @@ const ctx = canvas.getContext("2d");
 
 let w, h;
 let dots = [];
+let fireflies = [];
 
 function resize(){
   w = canvas.width = innerWidth;
@@ -19,13 +20,23 @@ function resize(){
 resize();
 addEventListener("resize", resize);
 
-for(let i = 0; i < 140; i++){
+for(let i = 0; i < 120; i++){
   dots.push({
     x: Math.random() * w,
     y: Math.random() * h,
     r: Math.random() * 2 + 0.6,
-    vx: (Math.random() - 0.5) * 0.7,
-    vy: (Math.random() - 0.5) * 0.7
+    vx: (Math.random() - 0.5) * 0.65,
+    vy: (Math.random() - 0.5) * 0.65
+  });
+}
+
+for(let i = 0; i < 35; i++){
+  fireflies.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 2 + 1,
+    a: Math.random(),
+    s: Math.random() * 0.03 + 0.01
   });
 }
 
@@ -41,7 +52,7 @@ function animate(){
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,225,255,.85)";
+    ctx.fillStyle = "rgba(0,225,255,.75)";
     ctx.fill();
 
     for(let j = i + 1; j < dots.length; j++){
@@ -50,14 +61,32 @@ function animate(){
       const dy = p.y - q.y;
       const d = Math.sqrt(dx * dx + dy * dy);
 
-      if(d < 115){
+      if(d < 110){
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(0,225,255,${1 - d / 115})`;
+        ctx.strokeStyle = `rgba(0,225,255,${(1 - d / 110) * 0.55})`;
         ctx.lineWidth = 0.35;
         ctx.stroke();
       }
+    }
+  });
+
+  fireflies.forEach(f => {
+    f.a += f.s;
+    const glow = Math.abs(Math.sin(f.a));
+
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, f.r + glow * 2, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0,225,255,${0.15 + glow * 0.5})`;
+    ctx.fill();
+
+    f.y -= 0.12;
+    f.x += Math.sin(f.a) * 0.25;
+
+    if(f.y < -20){
+      f.y = h + 20;
+      f.x = Math.random() * w;
     }
   });
 

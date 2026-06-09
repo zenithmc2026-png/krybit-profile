@@ -177,3 +177,24 @@ body{
 .chat-sidebar.closed .logo{
     margin:auto;
 }
+.collapse-btn{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:14px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    z-index:100;
+}
+
+.collapse-btn:hover{
+    background:#00eaff;
+    color:black;
+    box-shadow:0 0 20px #00eaff;
+}

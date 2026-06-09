@@ -65,9 +65,9 @@ function animate(){
 }
 
 animate();
-const sideMenu = document.getElementById("sideMenu");
-const menuToggle = document.getElementById("menuToggle");
+const chatSidebar = document.getElementById("chatSidebar");
+const collapseBtn = document.getElementById("collapseBtn");
 
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.toggle("minimized");
+collapseBtn.addEventListener("click", () => {
+  chatSidebar.classList.toggle("closed");
 });

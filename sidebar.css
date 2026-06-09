@@ -1,115 +1,143 @@
-.side-menu{
+.chat-sidebar{
   position:fixed;
-  left:34px;
-  top:50%;
-  transform:translateY(-50%);
-  width:86px;
-  padding:14px 10px;
-  border-radius:32px;
-  background:rgba(2,10,12,.38);
-  border:1px solid rgba(0,225,255,.30);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  box-shadow:
-    0 0 35px rgba(0,225,255,.18),
-    inset 0 0 25px rgba(255,255,255,.04);
+  left:0;
+  top:0;
+  bottom:0;
+  width:285px;
+  padding:22px 16px;
+  background:rgba(0,0,0,.78);
+  border-right:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(22px);
+  z-index:50;
   display:flex;
   flex-direction:column;
-  gap:14px;
-  z-index:20;
-  animation:sidebarEnter .9s ease;
+  transition:.35s ease;
 }
 
-@keyframes sidebarEnter{
-  from{opacity:0;transform:translateY(-50%) translateX(-45px);}
-  to{opacity:1;transform:translateY(-50%) translateX(0);}
+.chat-sidebar.closed{
+  width:82px;
 }
 
-.side-menu a{
-  position:relative;
-  width:64px;
-  height:64px;
+.sidebar-top{
   display:flex;
   align-items:center;
-  justify-content:center;
-  border-radius:22px;
+  justify-content:space-between;
+  margin-bottom:28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#00eaff;
+  color:#000;
+  font-weight:900;
+  box-shadow:0 0 25px rgba(0,225,255,.7);
+}
+
+.brand-text{
+  font-size:24px;
+  font-weight:900;
+}
+
+.collapse-btn{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  color:white;
+  cursor:pointer;
+}
+
+.sidebar-links,
+.sidebar-section{
+  display:grid;
+  gap:8px;
+}
+
+.sidebar-links a,
+.sidebar-section a{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  border-radius:15px;
   color:white;
   text-decoration:none;
-  font-size:22px;
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,255,255,.12);
-  transition:.35s ease;
-  overflow:hidden;
+  font-weight:700;
+  transition:.25s;
 }
 
-.side-menu a::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg, transparent, rgba(0,225,255,.55), transparent);
-  opacity:0;
-  transition:.35s;
+.sidebar-links a:hover,
+.sidebar-links a.active,
+.sidebar-section a:hover{
+  background:rgba(255,255,255,.14);
 }
 
-.side-menu a:hover::before,
-.side-menu a.active::before{
-  opacity:1;
+.sidebar-section{
+  margin-top:34px;
 }
 
-.side-menu a:hover,
-.side-menu a.active{
-  background:rgba(0,225,255,.95);
-  color:#001014;
-  transform:translateX(10px) scale(1.08);
-  box-shadow:
-    0 0 25px rgba(0,225,255,.75),
-    0 0 55px rgba(0,225,255,.35);
+.sidebar-section h4{
+  color:#aaa;
+  font-size:15px;
+  margin:0 0 8px 14px;
 }
 
-.side-menu a i{
-  position:relative;
-  z-index:2;
+.sidebar-footer{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.08);
 }
 
-.side-menu a span{
-  position:absolute;
-  left:82px;
-  padding:9px 14px;
-  border-radius:12px;
-  background:rgba(2,10,12,.75);
-  border:1px solid rgba(0,225,255,.25);
-  color:white;
-  font-size:13px;
-  font-weight:800;
-  white-space:nowrap;
-  opacity:0;
-  pointer-events:none;
-  transform:translateX(-10px);
-  transition:.3s;
-  box-shadow:0 0 20px rgba(0,225,255,.18);
+.mini-avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#00eaff;
+  color:#000;
+  display:grid;
+  place-items:center;
+  font-weight:900;
 }
 
-.side-menu a:hover span{
-  opacity:1;
-  transform:translateX(0);
+.sidebar-footer p{
+  color:#aaa;
+  font-size:14px;
 }
 
-@media(max-width:700px){
-  .side-menu{
-    left:50%;
-    top:auto;
-    bottom:22px;
-    transform:translateX(-50%);
-    width:auto;
-    flex-direction:row;
-  }
+.chat-sidebar.closed span,
+.chat-sidebar.closed h4,
+.chat-sidebar.closed .sidebar-footer div:last-child{
+  display:none;
+}
 
-  .side-menu a:hover,
-  .side-menu a.active{
-    transform:translateY(-6px) scale(1.08);
-  }
+.chat-sidebar.closed .sidebar-top{
+  justify-content:center;
+}
 
-  .side-menu a span{
-    display:none;
-  }
+.chat-sidebar.closed .collapse-btn{
+  display:none;
+}
+
+.chat-sidebar.closed a{
+  justify-content:center;
+  padding:15px;
+}
+
+.chat-sidebar.closed .sidebar-footer{
+  justify-content:center;
 }

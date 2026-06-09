@@ -65,9 +65,18 @@ function animate(){
 }
 
 animate();
-const chatSidebar = document.getElementById("chatSidebar");
-const collapseBtn = document.getElementById("collapseBtn");
+const sidebar = document.getElementById("chatSidebar");
+const btn = document.getElementById("collapseBtn");
+const icon = document.getElementById("collapseIcon");
 
-collapseBtn.addEventListener("click", () => {
-  chatSidebar.classList.toggle("closed");
+btn.addEventListener("click", () => {
+
+    sidebar.classList.toggle("closed");
+
+    if(sidebar.classList.contains("closed")){
+        icon.className = "fa-solid fa-chevron-right";
+    }else{
+        icon.className = "fa-solid fa-chevron-left";
+    }
+
 });

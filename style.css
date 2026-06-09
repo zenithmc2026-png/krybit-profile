@@ -1,0 +1,166 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050505;
+font-family:Arial,sans-serif;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.grid{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+background-size:40px 40px;
+animation:gridMove 8s linear infinite;
+z-index:-3;
+}
+
+@keyframes gridMove{
+from{
+background-position:0 0;
+}
+to{
+background-position:40px 40px;
+}
+}
+
+#snow{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-2;
+}
+
+.cursor-glow{
+position:fixed;
+width:250px;
+height:250px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(0,200,255,.4),
+transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:-1;
+}
+
+.container{
+width:100%;
+max-width:550px;
+text-align:center;
+padding:35px;
+border-radius:30px;
+backdrop-filter:blur(25px);
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 0 40px rgba(0,200,255,.25);
+}
+
+.avatar{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(255,255,255,.3);
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+h1{
+margin-top:15px;
+font-size:42px;
+background:linear-gradient(
+90deg,
+#ffffff,
+#00c8ff,
+#b800ff
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.bio{
+margin-top:10px;
+color:#ccc;
+}
+
+.badges{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.badges span{
+padding:8px 12px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+}
+
+.links{
+display:grid;
+gap:12px;
+margin-top:25px;
+}
+
+.links a{
+padding:15px;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.25s;
+}
+
+.links a:hover{
+transform:scale(1.03);
+background:rgba(0,200,255,.15);
+}
+
+.music-card{
+margin-top:25px;
+padding:15px;
+border-radius:20px;
+background:rgba(255,255,255,.06);
+}
+
+.discord-card{
+margin-top:20px;
+display:flex;
+align-items:center;
+gap:15px;
+padding:15px;
+border-radius:20px;
+background:rgba(255,255,255,.06);
+text-align:left;
+}
+
+.status{
+width:14px;
+height:14px;
+border-radius:50%;
+background:#00ff88;
+box-shadow:0 0 15px #00ff88;
+}

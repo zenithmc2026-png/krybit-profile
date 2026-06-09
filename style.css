@@ -438,3 +438,7 @@ h1{
       translateY(-102px);
   }
 }
+.social-icons a,
+.sidebar a {
+  text-decoration: none !important;
+}

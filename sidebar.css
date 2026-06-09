@@ -1,0 +1,55 @@
+.side-menu{
+  position:fixed;
+  left:28px;
+  top:50%;
+  transform:translateY(-50%);
+  width:82px;
+  padding:18px 10px;
+  border-radius:28px;
+  background:rgba(5,12,14,.35);
+  border:1px solid rgba(0,225,255,.25);
+  backdrop-filter:blur(14px);
+  box-shadow:0 0 30px rgba(0,225,255,.15);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  z-index:20;
+  animation:sideIn 1s ease;
+}
+
+@keyframes sideIn{
+  from{
+    opacity:0;
+    transform:translateY(-50%) translateX(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+}
+
+.side-menu a{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  color:white;
+  text-decoration:none;
+  font-size:22px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  transition:.3s;
+}
+
+.side-menu a:hover{
+  background:#00eaff;
+  color:#000;
+  transform:translateX(8px) scale(1.08);
+  box-shadow:0 0 22px rgba(0,225,255,.7);
+}
+
+.side-menu a.active{
+  background:rgba(0,225,255,.22);
+  box-shadow:0 0 20px rgba(0,225,255,.45);
+}

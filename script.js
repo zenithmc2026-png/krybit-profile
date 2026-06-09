@@ -65,18 +65,20 @@ function animate(){
 }
 
 animate();
-const sidebar = document.getElementById("chatSidebar");
-const btn = document.getElementById("collapseBtn");
-const icon = document.getElementById("collapseIcon");
+const chatSidebar = document.getElementById("chatSidebar");
+const collapseBtn = document.getElementById("collapseBtn");
+const collapseIcon = document.getElementById("collapseIcon");
 
-btn.addEventListener("click", () => {
+if (collapseBtn) {
+  collapseBtn.addEventListener("click", () => {
 
-    sidebar.classList.toggle("closed");
+    chatSidebar.classList.toggle("closed");
 
-    if(sidebar.classList.contains("closed")){
-        icon.className = "fa-solid fa-chevron-right";
-    }else{
-        icon.className = "fa-solid fa-chevron-left";
+    if (chatSidebar.classList.contains("closed")) {
+      collapseIcon.className = "fa-solid fa-arrow-right";
+    } else {
+      collapseIcon.className = "fa-solid fa-bars";
     }
 
-});
+  });
+}

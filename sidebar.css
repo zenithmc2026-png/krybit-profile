@@ -141,3 +141,17 @@
 .chat-sidebar.closed .sidebar-footer{
   justify-content:center;
 }
+.chat-sidebar.closed .collapse-btn{
+  display:grid !important;
+  place-items:center;
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:#00eaff;
+  color:#001014;
+  z-index:999;
+}

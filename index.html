@@ -9,15 +9,16 @@
 </head>
 <body>
 
-<canvas id="bg"></canvas>
-<div class="smoke"></div>
+<div class="bg"></div>
+<div class="overlay"></div>
+<canvas id="particles"></canvas>
 <div class="cursor-glow"></div>
 
 <aside class="sidebar">
-  <h2>BN</h2>
+  <h1>BN</h1>
 
   <nav>
-    <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
     <a href="#about"><i class="fa-solid fa-user"></i> About</a>
     <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
     <a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a>
@@ -32,109 +33,104 @@
   </div>
 </aside>
 
-<main class="page">
+<main class="main" id="home">
 
-  <section class="hero" id="home">
-    <div class="profile">
-      <div class="avatar-wrap">
-        <img src="avatar.jpg" class="avatar" alt="Profile Picture">
-      </div>
+  <section class="profile-card">
+    <div class="avatar-ring">
+      <img src="avatar.jpg" class="avatar">
+    </div>
 
-      <h1>Bishweshwar</h1>
-      <h3>Nayak</h3>
-      <p>Developer • Creator • Student</p>
+    <h1>BISHWESHWAR</h1>
+    <h2>NAYAK</h2>
+    <p>Developer • Creator • Student</p>
 
-      <div class="line"></div>
+    <div class="line"></div>
 
-      <p class="intro">
-        I build modern websites, Discord bots, Minecraft servers and clean digital projects with smooth design.
+    <p class="intro">
+      I build modern websites, Discord bots, Minecraft servers and digital projects with smooth design.
+    </p>
+
+    <a class="btn" href="https://discord.gg/QRaVYpKZv" target="_blank">
+      Let’s Connect <i class="fa-solid fa-paper-plane"></i>
+    </a>
+
+    <div class="status">
+      <span></span> Available for work
+    </div>
+  </section>
+
+  <section class="content">
+
+    <div class="card" id="about">
+      <h3><i class="fa-solid fa-user"></i> About Me</h3>
+      <p>
+        Hi, I’m Bishweshwar. I enjoy turning ideas into real projects.
+        I focus on clean design, performance, animations and aesthetic UI.
       </p>
-
-      <a class="connect" href="https://discord.gg/QRaVYpKZv" target="_blank">
-        Let’s Connect <i class="fa-solid fa-arrow-right"></i>
-      </a>
     </div>
 
-    <div class="content">
-
-      <div class="card" id="about">
-        <h2><i class="fa-solid fa-user"></i> About Me</h2>
-        <p>
-          Hi, I’m Bishweshwar. I enjoy turning ideas into real projects.
-          I focus on clean design, performance, animations and aesthetic UI.
-        </p>
-        <span class="signature">Bishweshwar</span>
+    <div class="card" id="skills">
+      <h3><i class="fa-solid fa-code"></i> Skills</h3>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Node.js</span>
+        <span>Discord.js</span>
+        <span>Python</span>
+        <span>GitHub</span>
+        <span>Minecraft Servers</span>
       </div>
-
-      <div class="card" id="skills">
-        <h2><i class="fa-solid fa-code"></i> Skills</h2>
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>Discord.js</span>
-          <span>Python</span>
-          <span>GitHub</span>
-          <span>Minecraft Servers</span>
-        </div>
-      </div>
-
-      <div class="card" id="projects">
-        <div class="title-row">
-          <h2><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
-          <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="projects">
-          <div class="project">
-            <i class="fa-solid fa-globe"></i>
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio with HTML, CSS, JS and animations.</p>
-            <button>View Project</button>
-          </div>
-
-          <div class="project">
-            <i class="fab fa-discord"></i>
-            <h3>Discord Bot</h3>
-            <p>Advanced Discord bot with moderation and utilities.</p>
-            <button>View Project</button>
-          </div>
-
-          <div class="project">
-            <i class="fa-solid fa-cube"></i>
-            <h3>Minecraft Server</h3>
-            <p>Custom Minecraft server with unique plugins.</p>
-            <button>View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card music-card" id="music">
-        <h2><i class="fa-solid fa-music"></i> Now Playing</h2>
-
-        <div class="player">
-          <div class="cover">♪</div>
-
-          <div class="song-info">
-            <h3>Freedom</h3>
-            <p>Pharrell Williams</p>
-            <div class="bar">
-              <span></span>
-            </div>
-          </div>
-
-          <button id="playBtn">
-            <i class="fa-solid fa-play"></i>
-          </button>
-        </div>
-
-        <audio id="musicAudio" loop>
-          <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
     </div>
+
+    <div class="card" id="projects">
+      <h3><i class="fa-solid fa-folder-open"></i> Featured Projects</h3>
+
+      <div class="projects">
+        <div class="project">
+          <i class="fa-solid fa-globe"></i>
+          <h4>Portfolio Website</h4>
+          <p>Personal portfolio with animations and glass UI.</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="project">
+          <i class="fab fa-discord"></i>
+          <h4>Discord Bot</h4>
+          <p>Advanced bot with moderation and utilities.</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="project">
+          <i class="fa-solid fa-cube"></i>
+          <h4>Minecraft Server</h4>
+          <p>Custom server with plugins and economy.</p>
+          <button>View Project</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card music" id="music">
+      <h3><i class="fa-solid fa-music"></i> Now Playing</h3>
+
+      <div class="player">
+        <div class="cover">♪</div>
+        <div>
+          <h4>Freedom</h4>
+          <p>Pharrell Williams</p>
+          <div class="bar"><span></span></div>
+        </div>
+
+        <button id="playBtn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <audio id="audio" loop>
+        <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
   </section>
 
 </main>

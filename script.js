@@ -5,36 +5,34 @@ document.addEventListener("mousemove", e => {
   cursor.style.top = e.clientY + "px";
 });
 
-const canvas = document.getElementById("bg");
+const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
 let w, h;
-let particles = [];
+let dots = [];
 
 function resize(){
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
+  w = canvas.width = innerWidth;
+  h = canvas.height = innerHeight;
 }
 
-window.addEventListener("resize", resize);
 resize();
+addEventListener("resize", resize);
 
-for(let i = 0; i < 120; i++){
-  particles.push({
+for(let i = 0; i < 140; i++){
+  dots.push({
     x: Math.random() * w,
     y: Math.random() * h,
-    r: Math.random() * 2 + 0.7,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5
+    r: Math.random() * 2 + 0.6,
+    vx: (Math.random() - 0.5) * 0.7,
+    vy: (Math.random() - 0.5) * 0.7
   });
 }
 
 function animate(){
   ctx.clearRect(0, 0, w, h);
 
-  for(let i = 0; i < particles.length; i++){
-    const p = particles[i];
-
+  dots.forEach((p, i) => {
     p.x += p.vx;
     p.y += p.vy;
 
@@ -43,39 +41,39 @@ function animate(){
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(255,255,255,.8)";
+    ctx.fillStyle = "rgba(0,225,255,.85)";
     ctx.fill();
 
-    for(let j = i + 1; j < particles.length; j++){
-      const q = particles[j];
+    for(let j = i + 1; j < dots.length; j++){
+      const q = dots[j];
       const dx = p.x - q.x;
       const dy = p.y - q.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      const d = Math.sqrt(dx * dx + dy * dy);
 
-      if(dist < 120){
+      if(d < 115){
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(255,255,255,${1 - dist / 120})`;
-        ctx.lineWidth = 0.4;
+        ctx.strokeStyle = `rgba(0,225,255,${1 - d / 115})`;
+        ctx.lineWidth = 0.35;
         ctx.stroke();
       }
     }
-  }
+  });
 
   requestAnimationFrame(animate);
 }
 
 animate();
 
-const audio = document.getElementById("musicAudio");
+const audio = document.getElementById("audio");
 const btn = document.getElementById("playBtn");
 
 btn.addEventListener("click", () => {
   if(audio.paused){
     audio.play();
     btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-  }else{
+  } else {
     audio.pause();
     btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
   }

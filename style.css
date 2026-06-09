@@ -148,3 +148,26 @@ body{
     color:white;
     cursor:pointer;
 }
+.chat-sidebar.closed{
+    width:72px;
+}
+
+.chat-sidebar.closed .brand-text,
+.chat-sidebar.closed span,
+.chat-sidebar.closed h4,
+.chat-sidebar.closed .sidebar-footer{
+    display:none;
+}
+
+.chat-sidebar.closed .sidebar-links a,
+.chat-sidebar.closed .sidebar-section a{
+    justify-content:center;
+    padding:14px 0;
+}
+
+.chat-sidebar.closed .collapse-btn{
+    top:18px;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+}

@@ -19,13 +19,13 @@ function resize(){
 window.addEventListener("resize", resize);
 resize();
 
-for(let i = 0; i < 70; i++){
+for(let i = 0; i < 55; i++){
   dots.push({
     x: Math.random() * w,
     y: Math.random() * h,
     r: Math.random() * 2 + 0.5,
-    vx: (Math.random() - 0.5) * 0.45,
-    vy: (Math.random() - 0.5) * 0.45
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35
   });
 }
 
@@ -41,7 +41,7 @@ function animate(){
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,225,255,.65)";
+    ctx.fillStyle = "rgba(0,225,255,.55)";
     ctx.fill();
 
     for(let j = i + 1; j < dots.length; j++){
@@ -50,12 +50,12 @@ function animate(){
       const dy = p.y - q.y;
       const d = Math.sqrt(dx * dx + dy * dy);
 
-      if(d < 130){
+      if(d < 120){
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(0,225,255,${0.45 - d / 300})`;
-        ctx.lineWidth = 0.35;
+        ctx.strokeStyle = `rgba(0,225,255,${0.35 - d / 350})`;
+        ctx.lineWidth = 0.3;
         ctx.stroke();
       }
     }
@@ -65,16 +65,3 @@ function animate(){
 }
 
 animate();
-
-const audio = document.getElementById("audio");
-const btn = document.getElementById("playBtn");
-
-btn.addEventListener("click", () => {
-  if(audio.paused){
-    audio.play();
-    btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-  }else{
-    audio.pause();
-    btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
-  }
-});

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phantom Portfolio</title>
+  <title>Phantom</title>
 
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
@@ -16,106 +16,32 @@
 <canvas id="particles"></canvas>
 <div class="cursor-glow"></div>
 
-<aside class="sidebar">
-  <h1>PN</h1>
+<main class="center">
 
-  <nav>
-    <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
-    <a href="#projects"><i class="fa-solid fa-folder"></i> Projects</a>
-    <a href="#music"><i class="fa-solid fa-music"></i> Music</a>
-  </nav>
-</aside>
-
-<main class="main" id="home">
-
-  <section class="profile-card">
+  <section class="phantom-card">
     <div class="avatar-ring">
-      <img src="avatar.jpg" class="avatar" alt="Phantom Avatar">
+      <img src="avatar.jpg" class="avatar" alt="Phantom">
     </div>
 
-    <h1 class="phantom-name">PHANTOM</h1>
-    <p class="role">Developer • Creator • Student</p>
+    <h1>PHANTOM</h1>
+    <p>Developer • Creator • Student</p>
 
     <div class="line"></div>
 
-    <p class="intro">
-      I build modern websites, Discord bots, Minecraft servers and clean digital projects with smooth design.
+    <p class="bio">
+      I build modern websites, Discord bots, Minecraft servers and clean digital projects.
     </p>
 
+    <div class="links">
+      <a href="https://discord.gg/QRaVYpKZv" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://www.instagram.com/_bishweshwar_nayak/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/zenithmc2026-png/krybit-profile" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
     <a class="connect" href="https://discord.gg/QRaVYpKZv" target="_blank">
-      Let's Connect <i class="fa-solid fa-paper-plane"></i>
+      Let’s Connect <i class="fa-solid fa-paper-plane"></i>
     </a>
-  </section>
-
-  <section class="content">
-
-    <div class="card about">
-      <h2><i class="fa-solid fa-user-astronaut"></i> About Phantom</h2>
-      <p>
-        I enjoy turning ideas into real projects with clean UI, smooth animations,
-        good performance and a premium cyber-style look.
-      </p>
-    </div>
-
-    <div class="card" id="skills">
-      <h2><i class="fa-solid fa-code"></i> Skills</h2>
-      <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Node.js</span>
-        <span>Discord.js</span>
-        <span>Minecraft</span>
-      </div>
-    </div>
-
-    <div class="card" id="projects">
-      <h2><i class="fa-solid fa-folder-open"></i> Projects</h2>
-
-      <div class="projects">
-        <div class="project">
-          <i class="fa-solid fa-globe"></i>
-          <h3>Portfolio</h3>
-          <p>Animated personal website with clean glass UI.</p>
-        </div>
-
-        <div class="project">
-          <i class="fab fa-discord"></i>
-          <h3>Discord Bot</h3>
-          <p>Custom bot with moderation and utility tools.</p>
-        </div>
-
-        <div class="project">
-          <i class="fa-solid fa-cube"></i>
-          <h3>Minecraft</h3>
-          <p>Server setup with plugins, ranks and menus.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card music" id="music">
-      <h2><i class="fa-solid fa-music"></i> Music</h2>
-
-      <div class="player">
-        <div class="cover">♪</div>
-
-        <div class="song">
-          <h3>Freedom</h3>
-          <p>Pharrell Williams</p>
-          <div class="bar"><span></span></div>
-        </div>
-
-        <button id="playBtn">
-          <i class="fa-solid fa-play"></i>
-        </button>
-      </div>
-
-      <audio id="audio" loop>
-        <source src="https://files.catbox.moe/8m3j7k.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-
   </section>
 
 </main>

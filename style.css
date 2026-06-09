@@ -137,64 +137,14 @@ body{
   border:1px solid #00eaff;
 }
 .collapse-btn{
-    width:38px;
-    height:38px;
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:40px;
+    height:40px;
     border:none;
     border-radius:12px;
-    cursor:pointer;
-    color:white;
-    background:rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.collapse-btn:hover{
-    background:#00eaff;
-    color:black;
-    box-shadow:0 0 20px rgba(0,225,255,.7);
-}
-
-.chat-sidebar.closed{
-    width:85px;
-}
-
-.chat-sidebar.closed .brand-text,
-.chat-sidebar.closed span,
-.chat-sidebar.closed h4,
-.chat-sidebar.closed .sidebar-footer div{
-    display:none;
-}
-
-.chat-sidebar.closed .sidebar-links a,
-.chat-sidebar.closed .sidebar-section a{
-    justify-content:center;
-    padding:14px;
-}
-
-.chat-sidebar.closed .sidebar-footer{
-    justify-content:center;
-}
-
-.chat-sidebar.closed .logo{
-    margin:auto;
-}
-.collapse-btn{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:14px;
     background:rgba(255,255,255,.08);
     color:white;
     cursor:pointer;
-    font-size:18px;
-    z-index:100;
-}
-
-.collapse-btn:hover{
-    background:#00eaff;
-    color:black;
-    box-shadow:0 0 20px #00eaff;
 }

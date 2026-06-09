@@ -65,3 +65,9 @@ function animate(){
 }
 
 animate();
+const sideMenu = document.getElementById("sideMenu");
+const menuToggle = document.getElementById("menuToggle");
+
+menuToggle.addEventListener("click", () => {
+  sideMenu.classList.toggle("minimized");
+});

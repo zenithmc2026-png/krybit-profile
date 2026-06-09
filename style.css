@@ -181,57 +181,32 @@ nav a.active{
 
 .avatar-wrap{
   position:relative;
-  width:240px;
-  height:240px;
-  margin:0 auto 35px;
+  width:210px;
+  height:210px;
+  margin:0 auto 25px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 .avatar{
-  width:165px;
-  height:165px;
+  width:135px;
+  height:135px;
   border-radius:50%;
   object-fit:cover;
-  border:6px solid #00eaff;
+  border:5px solid #00eaff;
   box-shadow:
     0 0 25px #00eaff,
-    0 0 55px #00eaff,
-    0 0 100px rgba(0,234,255,.4);
+    0 0 55px rgba(0,234,255,.8);
   z-index:5;
-  animation:avatarFloat 4s ease-in-out infinite;
-}
-
-@keyframes avatarFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-
-.music-bars{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  animation:spin 18s linear infinite;
 }
 
 .music-bars span{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:6px;
-  height:35px;
-  border-radius:20px;
-  background:#00eaff;
-  box-shadow:
-    0 0 12px #00eaff,
-    0 0 25px #00eaff;
+  width:5px;
+  height:30px;
   transform:
     rotate(calc(var(--i) * 18deg))
-    translateY(-118px);
-  transform-origin:center;
-  animation:beat 1s ease-in-out infinite;
-  animation-delay:calc(var(--i) * .04s);
+    translateY(-95px);
 }
 
 .music-bars span:nth-child(odd){
